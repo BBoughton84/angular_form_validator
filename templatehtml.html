@@ -1,4 +1,5 @@
-<form name="userForm">
+<form name="userForm" novalidate>
+  <h1>hello from template</h1>
 
     <input
         type="text"
@@ -7,6 +8,13 @@
         ng-minlength="3"
         ng-maxlength="12"
         required>
+
+    <div ng-messages="userForm.username.$error">
+        <p ng-message="minlength">Your name is too short.</p>
+        <p ng-message="maxlength">Your name is too long.</p>
+        <p ng-message="required">Your name is required.</p>
+    </div>
+
     <input
         type="text"
         name="password"
@@ -14,6 +22,13 @@
         ng-minlength="3"
         ng-maxlength="12"
         required>
+
+    <div ng-messages="userForm.password.$error">
+        <p ng-message="minlength">Your password is too short.</p>
+        <p ng-message="maxlength">Your password is too long.</p>
+        <p ng-message="required">Your password is required.</p>
+    </div>
+
     <input
         type="email"
         name="email"
@@ -21,6 +36,13 @@
         ng-minlength="3"
         ng-maxlength="25"
         required>
+
+    <div ng-messages="userForm.email.$error">
+        <p ng-message="minlength">Your email is too short.</p>
+        <p ng-message="maxlength">Your email is too long.</p>
+        <p ng-message="required">Your email is required.</p>
+    </div>
+
     <input
         type="number"
         name="zip"
@@ -29,10 +51,14 @@
         ng-maxlength="5"
         required>
 
-    <div ng-messages="userForm.username.$error">
-        <p ng-message="minlength">Your name is too short.</p>
-        <p ng-message="maxlength">Your name is too long.</p>
-        <p ng-message="required">Your name is required.</p>
+    <div ng-messages="userForm.zip.$error">
+        <p ng-message="minlength">Your zip is too short.</p>
+        <p ng-message="maxlength">Your zip is too long.</p>
+        <p ng-message="required">Your zip is required.</p>
     </div>
+
+    <input type="submit" name="submit" value="submit">
+
+
 
 </form>

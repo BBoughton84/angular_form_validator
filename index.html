@@ -8,10 +8,11 @@
 
   </head>
   <body>
+    <h1>hello</h1>
     <validator></validator>
 
     <script type="text/javascript">
-      angular.module("app", ['ngMessages']){
+      angular.module("app", ['ngMessages'])
         .component('validator', {
           controller: function() {
             const vm = this
@@ -21,7 +22,7 @@
 
           templateUrl: "./templatehtml.html"
         })
-      }
+
 
     </script>
 
