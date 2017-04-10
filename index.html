@@ -5,6 +5,7 @@
     <title>Testing Angular Form Validation</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <link rel="stylesheet" href="main.css">
 
   </head>
   <body>
@@ -12,11 +13,25 @@
     <validator></validator>
 
     <script type="text/javascript">
-      angular.module("app", ['ngMessages'])
+      angular.module('app', ['ngMessages'])
         .component('validator', {
           controller: function() {
-            const vm = this
+            const $ctrl = this
 
+            $ctrl.$onInit = function() {
+              $ctrl.users = []
+            }
+
+
+            $ctrl.submit = function(form) {
+              console.log(form);
+              $ctrl.users.push($ctrl.user)
+              console.log($ctrl.users)
+              $ctrl.result = $ctrl.user
+              form.$setPristine()
+              form.$setUntouched()
+              $ctrl.user = {};
+            }
 
           },
 

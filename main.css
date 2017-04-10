@@ -1,0 +1,11 @@
+.notsuccess {
+  border: 2px solid red;
+}
+
+.success {
+  border: 5px solid green;
+}
+
+input:focus {
+  outline: none;
+}
